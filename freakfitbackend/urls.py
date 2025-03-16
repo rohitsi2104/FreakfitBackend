@@ -7,4 +7,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('customers.urls')),
 ]
-urlpatterns += static(settings.STATIC_ROOT, documents_root= settings.STATIC_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
