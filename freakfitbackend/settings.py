@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-import os
+
 from pathlib import Path
 from datetime import timedelta
 
@@ -22,8 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-+538bbe7-bh-0c23_rjtq#p$$7ct5%b=bw5)+745fizpbo*2hc'
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'your-default-secret-key')
+SECRET_KEY = 'django-insecure-+538bbe7-bh-0c23_rjtq#p$$7ct5%b=bw5)+745fizpbo*2hc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -52,8 +51,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-
 ]
 
 REST_FRAMEWORK = {
@@ -138,12 +135,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-
-STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
