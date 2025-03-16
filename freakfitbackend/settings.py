@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'customers',
+    "whitenoise.runserver_nostatic",  # ✅ Add Whitenoise
+
 ]
 
 # MIDDLEWARE = [
