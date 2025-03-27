@@ -8,13 +8,8 @@
   ],
   "routes": [
     {
-      "src": "/static/(.*)",
-      "dest": "/staticfiles/$1"
-    },
-    {
       "src": "/(.*)",
       "dest": "freakfitbackend/wsgi.py"
     }
-  ],
-  "installCommand": "pip install --no-cache-dir setuptools -r requirements.txt"
+  ]
 }
